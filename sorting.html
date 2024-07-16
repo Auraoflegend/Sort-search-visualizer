@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="sorting.css">
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="setAlgo('bubbleSort')">Bubble Sort</button>
+        <button onclick="setAlgo('selectionSort')">Selection Sort</button>
+        <button onclick="setAlgo('insertionSort')">Insertion Sort</button>
+        <button onclick="setAlgo('MergeSort')">Merge Sort</button>
+        <button onclick="setAlgo('QuickSort')">Quick Sort</button>
+    </div>
+    <br>
+
+    <h1 id="algoName"></h1>
+
+    <div class="controls">
+        <div>
+            <label for="barCount">Number of Bars</label>
+            <input type="range" id="barCount" min="10" max="100" value="10" onchange="update()">
+        </div>
+        <div>
+            <label for="swapSpeed">Swap Speed (ms)</label>
+            <input type="range" id="swapspeed" min="1" max="2000" value="500" onchange="updateTime()">
+
+        </div>
+        <div>
+            <button onclick="startSorting()">Start Sorting</button>
+        </div>
+    </div>
+
+    <div class="array-container" id="display"></div>
+    <div class="analysis">
+        <h3 id="timeTaken"></h3>
+        <h3 id="number"></h3>
+        <h3 id="swapCount"></h3>
+    </div>
+
+    <script src="sorting.js"></script>
+</body>
+</html>
