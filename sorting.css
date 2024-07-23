@@ -19,16 +19,19 @@ body {
     overflow: hidden;
 }
 
-.navbar a {
+.navbar button {
     float: left;
     display: block;
     color: white;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
+    border: none;
+    background-color: #3498db;
+    cursor: pointer;
 }
 
-.navbar a:hover {
+.navbar button:hover {
     background-color: #2980b9;
 }
 
@@ -52,7 +55,7 @@ label {
     justify-content: center;
     align-items: flex-end;
     height: 300px;
-    width: 80%;
+    width: 60%;
     margin: 20px auto;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -63,9 +66,25 @@ label {
     width: 10px;
     margin: 0 2px;
     background-color: #3498db;
-    transition: height 0.3s, background-color 0.3s;
+    transition: height 0.2s, background-color 0.2s;
 }
 
+.bar-red {
+    background-color: red !important;
+}
+
+.bar-yellow {
+    background-color: yellow !important;
+}
+
+.bar-green {
+    background-color: #2ecc71 !important;
+}
+
+.bar-pink{
+    background-color: pink;
+
+}
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -79,4 +98,33 @@ button {
 
 button:hover {
     background-color: #2980b9;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+.analysis {
+    margin-bottom: 20px;
+}
+
+#code {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.highlight {
+    background-color: #ffff00;
 }
