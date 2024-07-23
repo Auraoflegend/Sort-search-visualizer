@@ -1,5 +1,5 @@
 let array = [];
-let time = 1000;
+let time = 500;
 let algorithm = 'bubbleSort';
 
 function setAlgo(algo) {
