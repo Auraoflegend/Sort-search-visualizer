@@ -60,31 +60,21 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+
 async function swap(array, i, j) {
     const bars = document.getElementsByClassName('bar');
-
-    // Swap the elements in the array
-    [array[i], array[j]] = [array[j], array[i]];
-
-    // Update the height of the bars to reflect the swap
+    bars[i].classList.add('bar-red');
+    bars[j].classList.add('bar-red');
+    await sleep(time);
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
     bars[i].style.height = `${array[i]}%`;
     bars[j].style.height = `${array[j]}%`;
-
-    // Temporarily highlight bars in red to indicate a swap
-    bars[i].style.backgroundColor = 'red';
-    bars[j].style.backgroundColor = 'red';
-
-    // Force a repaint to ensure the color change is visible
-    await new Promise(resolve => requestAnimationFrame(() => resolve()));
-    await new Promise(resolve => setTimeout(resolve, 100)); // Short delay to ensure color change visibility
-
-    // Revert bars to default color
-    bars[i].style.backgroundColor = '#3498db';
-    bars[j].style.backgroundColor = '#3498db';
-
-    // Force another repaint to ensure the color change is rendered
-    await new Promise(resolve => requestAnimationFrame(() => resolve()));
+    bars[i].classList.remove('bar-red');
+    bars[j].classList.remove('bar-red');
 }
+
 
 
 
@@ -397,15 +387,7 @@ async function partition(arr, low, high) {
 }
 
 // Swap function for swapping elements in the array and updating bar heights
-async function swap(arr, i, j) {
-    const bars = document.getElementsByClassName('bar');
-    let temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
 
-    bars[i].style.height = `${arr[i]}%`;
-    bars[j].style.height = `${arr[j]}%`;
-}
 
 
 document.addEventListener('DOMContentLoaded', () => {
